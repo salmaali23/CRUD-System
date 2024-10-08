@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <div class="bg-info py-5">
+        <div class="container">
+            <h1 class="text-center mb-5 text-white">Registration Form</h1>
+            <div class="bg-white p-4 rounded shadow">
+                <form id="registrationForm" onsubmit="return false;">
+                    <div class="mb-3">
+                        <label for="studentName" class="form-label fw-bold">Student Name</label>
+                        <input type="text" id="studentName" class="form-control" oninput="validationStudentName()" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentEmail" class="form-label fw-bold">Student Email</label>
+                        <input type="email" id="studentEmail" class="form-control" oninput="validationStudentEmail()" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="studentId" class="form-label fw-bold">Student ID</label>
+                        <input type="text" id="studentId" class="form-control" oninput="validationStudentId()" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="studentGender" class="form-label fw-bold">Gender</label>
+                        <select id="studentGender" class="form-select" required>
+                            <option selected">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary fw-bold w-100" id="btnRigesterAndUpdate">REGISTER</button>
+                </form>
+            </div>
+
+            <div class="tableContainer mt-5">
+                <div class="search w-75 mx-auto mb-4">
+                    <input type="text" class="form-control" placeholder="Search" oninput="searchStudent(this.value)">
+                </div>
+                <table class="table table-hover table-striped table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Index</th>
+                            <th>Student Name</th>
+                            <th>Student Email</th>
+                            <th>Student ID</th>
+                            <th>Student Gender</th>
+                            <th>Delete</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Dynamic Content Here -->
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/file.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
